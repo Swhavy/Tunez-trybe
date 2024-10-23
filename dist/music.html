@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tunez Trybe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./style.css" rel="stylesheet">
+  <link rel="icon" href="../Images/logo Icon.png">
+  <script src="https://kit.fontawesome.com/61cdb5ea4b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div class="w-screen h-screen relative">
+    <div class="min-w-full h-full bg-black opacity-30"></div>
+        <div id="mainEl" class="musicBox  tracks max-[360px]:w-full max-[360px]:h-full  overflow-auto overflow-x-hidden w-72 absolute m-auto inset-0  border-2 border-solid md:w-25 xl:w-32 lg:w-96 backdrop-blur-md">
+          <div id="shazamClick" class="shazam-click absolute top-[105%] right-0  -z-20 w-full mt-20 h-11 font-semibold text-lg hover:scale-8 text-white flex justify-center items-center bg-blue-400 bg-gradient-to-r from-blue-400 via-rose-400 to-purple-500">Identified Song</div>
+          <div id="musicMain" class="music-main cursor-default">
+          <div class="menu-container flex justify-between items-center w-full h-16">
+            <div class="menu-effect sm:scale-100 ml-2 w-12 h-12 scale-5 sm:ml-1.2 sm:w-8 sm:h-8 lg:scale-125 transition-all">
+              <img id="menu" src="../Images/icons/Menu.png" alt="Menu" class="menu scale-1.8  sm:scale-none"> 
+            </div>
+            <div class="search-group flex w-11/12 justify-end pl-1">
+                 <input id="search" type="text" class="search bg-slate-700 w-11/12 -mr-12 h-8 rounded-3xl self-center text-gray-200" placeholder="search your desired track, album, playlist"> 
+            <img src="../Images/icons/SearchIcon.png" id="searchIcon" class="search-icon scale-5 sm:scale-0.65 lg:scale-85 ">
+            </div>
+            <div id="mainSearchContainer" class="search-results-container pie w-5/6 h-42 absolute z-10 top-20 h-800:top-32 mx-auto inset-0 rounded-2xl bg-black/80">
+              <div id="searchResults" class="search-results tracks text-[.7rem] text-white w-full h-full overflow-auto overflow-x-hidden  flex flex-col divide-y-2 divide-gray-400/6">
+                <div id="0" class="result1 containing hover:bg-slate-400/30 w-full h-14  flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name ">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center"> <i id="icon0" class="fa-solid fa-play icon"></i></div>
+                </div>
+                <div id="1" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center">  <i id="icon1" class="fa-solid fa-play icon"></i></div>
+                </div>
+                <div id="2" class="containing result2 hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center">  <i id="icon2" class="fa-solid fa-play icon"></i></div>
+                </div>
+                <div id="3" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center">  <i id="icon3" class="fa-solid fa-play icon "></i></div>
+                </div>
+                <div id="4" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center">  <i id="icon4" class="fa-solid fa-play icon"></i></div>
+                </div>
+                <div id="5" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center">  <i id="icon5" class="fa-solid fa-play icon"></i></div>
+                </div>
+                <div id="6" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
+                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
+                    <div class="track-name">Love of my life by jayzee</div>
+                    <div class="track-name">ft. Yong jonn</div>
+                  </div>
+                  <div class="duration self-center">  <i div="icon6" class="fa-solid fa-play icon"></i></div>
+                </div>
+              </div>
+              <div id="hideSearchResults" class="bg-rose-600/80 hover:shadow-rose-300 hover:shadow-sm hover:scale-8 w-8 h-8 absolute -top-3 right-0 rounded-full"><img class="scale-5" src="../Images/icons/Close.png"></div>
+            </div>
+            <div id="menuTab" class="menutab text-lg fixed h-32 w-[45vw] sm:w-[15vw] xl:h-28 left-5 top-20 z-50">
+              <div class="flex text-white flex-col  bg-black/70 h-full w-full">
+                <nav class="divide-y-2  divide-gray-400/50">
+                  <li id="favouritesBtn" class="w-full h-10 list-none flex flex-col justify-center items-center hover:bg-gray-600/60">
+                    Favourites
+                  </li>
+                  <li id="playlistBtn" class="w-full flex flex-col justify-center items-center h-10 list-none hover:bg-gray-600/60">
+                    Playlist
+                  </li>
+                </nav>
+                <div id="hideMenuTab" class="bg-rose-600/80 hover:shadow-rose-300 hover:shadow-sm hover:scale-8 w-8 h-8 absolute lg:scale-[.6] -top-3 right-0 rounded-full"><img class="scale-5" src="../Images/icons/Close.png"></div>
+              </div>
+            </div>
+          </div>
+          <div id="mainPic" class="artist-pic w-40 h-40 sm:w-40 mt-12 sm:h-40 md:w-42 md:h-42 xl:mt-5 bg-slate-900 rounded-full">
+            </div>
+            <div class="time h-20 w-full flex flex-col text-sm md:text-lg md:gap-2 text-ellipsis justify-center items-center  gap-1">
+              <span id="mainTitle" class=" title font-bold text-lg text-white">Run It Up</span>
+              <span id="mainArtist" class="artist-name gradient text-blue-400 font-semibold text-transparent to-red bg-clip-text">Lil Tjay</span>
+          </div>
+          <div class="progress-more xl:mt-5 flex w-full justify-around h-6 mt-4 md:m-0 md:h-14 p-1 md:p-5">
+             <audio id="audio">
+              <source src="./musics/01 - Whatcha Say - (Musicfire.in) - Copy - Copy.mp3" type="audio/mp4">
+             </audio>
+             <input id="rangeTrk" type="range" class="range ml-8 w-8/12 justify-self-center self-center" min="0" max="150" value="20">
+            <div class="duration sm:text-16 sm:flex text-[0.65rem] flex w-12 ml-2 lg:text-sm justify-center md:text-1.2 self-center sm:w-16 sm:text-center">
+              <span id="timeSpan" class="current-time text-slate-200">0:00/</span>
+              <span id="songDuration" class="time-span text-slate-200">3:52</span>
+            </div>
+            <img class="hover:scale-8" src="../Images/icons/side.png">
+          </div>
+          <div class="utility-components sm:scale-125 md:scale-8 xl:mt-3 w-full h-6 mt-10 sm:mt-6 flex md:px-12 justify-around  sm:px-7 transition-all"> <!-- px-28 -->
+            <img id="shazam" src="../Images/icons/shazam.png" class="hover:scale-150 hover:animate-pulse scale-125 sm:scale-8 md:scale-125 " alt="shazam-icon"> <!-- -translate-x-3 -->
+            <!-- <img src="../Images/icons/Repeat.png" alt="repeat-icon" class="sm:scale-5 hover:scale-125 md:scale-95"> -->
+            <i id="repeat" class="fa-solid fa-repeat scale-105 hover:scale-125 flex items-center"></i>
+            <div class="vol flex justify-center items-center w-8 h-full ">
+            <!-- <img src="../Images/icons/Mask group-1.png " class="h-6 vol-icon sm:scale-0.6 md:scale-95" alt="vol-icon"> -->
+            <i id="volLow" class="fa-solid fa-volume-low flex justify-center items-center mr-1 w-6 h-6 vol-icon text-purple-500 scale-125 "></i><!-- sm:scale-0.6  -->
+            <input id="vol" type="range" class="vol-cntrl h-2 w-3/4 ">
+            </div>
+            <img id="like" src="../Images/icons/Mask group.png" alt="like" class="sm:scale-0.6 hover:scale-125 md:scale-100">
+            <img id="noLike"  src="../Images/icons/White heart.png" alt="like" class="likee sm:scale-0.6 hover:scale-125 md:scale-100">
+          </div>
+          <div id="playCntrls" class="playback-btn w-3/4 h-12 m-auto mt-10 md:w-2/4 md:mb-5   mb-2 sm:mb-2 xl:mt-10 xl:mb-4 justify-around p-2 flex  sm:gap-4 sm:px-0 sm:justify-between"> <!-- mt-9 pr-5-->
+            <img id="prevSong" src="../Images/icons/Previous.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="previous-btn">
+            <!-- <img src="../Images/icons/Mask group-2.png" class="w-10 hover:scale-8 pause h-10 rounded-full sm:scale-8 bg-purple-500 -mt-1 lg:scale-90" alt="pause-btn"> -->
+             <div class="flex justify-center items-center h-10 rounded-full bg-purple-500 hover:scale-8 w-10 ">
+              <i id="play" class="fa-solid fa-play scale-150"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause-->
+             </div>
+            <img id="nextSong" src="../Images/icons/Next.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="next-btn">
+          </div>
+        </div>
+
+          <div id="shazamUi" class="shazam-ui hidden">
+            <div class="w-full overflow-hidden flex justify-center items-center h-[18rem] absolute bottom-0 bg-gradient-to-r backdrop-blur-md from-slate-200/60 to-purple-400/40">
+              <div class="bg-gray-200 flex justify-center absolute m-auto inset-0 animate-ping items-center w-[13rem] h-[13rem] rounded-full">
+              </div>
+              <div class="bg-gray-400 flex justify-center absolute m-auto inset-0 transition-all items-center w-[10rem] h-[10rem] animate-ping rounded-full">
+              </div>
+              <div class="scale-8 m-auto rounded-full flex justify-center w-[12rem] h-[12rem]"><img src="../Images/icons/shazam-1.png" alt="shazam-icon">
+                <span class="audio-info h-fit absolute text-lg -bottom-10 text-white font-bold">Listening....</span>
+             </div>
+             <div id="closeShazamUi" class="bg-rose-600/80 hover:shadow-rose-300 hover:shadow-sm hover:scale-8 w-8 h-8 absolute top-2 right-8 rounded-full"><img class="scale-5" src="../Images/icons/Close.png" alt=""></div>
+            </div>
+          </div>
+
+          <div id="shazamResult" class="shazam-result"> <!-- absolute top-10 z-50 -->
+            <div id="position" class="w-full overflow-hidden rounded-md flex items-end h-[18.5rem] absolute  bottom-0  bg-black/40"> <!-- bottom-0 absolute-->
+
+
+              <audio id="shazamAudio">
+                <source src="./musics/01 - Whatcha Say - (Musicfire.in) - Copy - Copy.mp3" type="audio/mp4">
+               </audio>
+               <input id="shazamRangeTrk" type="range" class="range shazam-range ml-8 w-8/12 justify-self-center self-center" min="0" max="150" value="20">
+
+
+            <div class="w-full h-[17.8rem] relative bg-black/40">
+              <div id="shazamPlayContainer" class="pause w-20 h-20 min-[1025px]:h-24 min-[1025px]:w-24  sm:max-lg:scale-8 sm:max-lg:hover:scale-5 shadow-sm shadow-gray-50 hover:scale-8 bg-black rounded-full absolute z-50 flex justify-center items-center top-40 sm:max-lg:right-4 right-1 min-[1025px]:right-10"><i id="shazamPlay" class="fa-solid fa-play text-white scale-[2]"></i>
+              
+                <div id="shazamSpinner" class="w-5 hidden h-5 absolute m-auto inset-0 rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
+
+              </div>
+              <div class="track-art h-full"><img id="audioArt" alt="Asap rocky album"><div id="uiOverlay" class="absolute z-0 bottom-0 bg-red-400/20 w-full h-full"></div></div><!-- saturate-[.8] brightness-[.65] contrast-[1.2] -->
+              <div class="w-full h-12 absolute top-1 flex text-[.65rem] justify-around ">
+               <!-- bg-gradient-to-r from-yellow-600 to-red-500 --> <div id="songBtn" class="song-btn w-[4rem] h-[2rem] sm:max-lg:ml-3 mix-blend-hard-light border-[.1px] hover:shadow-md cursor-default hover:shadow-gray-300 border-emerald-400  mt-5 ml-5 xl:-ml-10 rounded-2xl flex justify-center items-center"> <div class="text-white">Songs</div></div>
+               <!-- bg-yellow-600 --> <div id="relatedBtn" class="Related-btn w-[4rem] h-[2rem] mix-blend-hard-light border-[.1px] border-emerald-400 sm:max-lg:mr-[4rem] hover:shadow-md cursor-default hover:shadow-gray-300   mt-5 mr-12 xl:mr-[9rem] rounded-2xl flex justify-center items-center"> <div class="text-white ">Related</div></div>
+                <div id="hideShazamResult" class="bg-rose-600/80 h-5 w-5 hover:shadow-rose-300 hover:shadow-sm hover:scale-8  min-[1025px]:w-8 min-[1025px]:h-8 sm:max-lg:w-5 sm:max-lg:h-5 absolute top-2 right-8 rounded-full"><img class="scale-8" src="../Images/icons/Close.png"></div>
+          </div>
+
+
+          <div id="resultsInfo" class="results-info absolute bottom-16 left-5 text-white cursor-default"> <!-- use this in ur js code bottom = 1.25rem bottom-5 -->
+           <div id="trackName" class="track-name  text-[1.02rem] truncate  min-[361px]:max-[640px]:max-w-[42vw] max-w-[70vw] md:max-w-[22vw] lg:max-w-[45vw] sm:max-lg:text-[.68rem] min-[1025px]:text-[1.02rem] font-bold">Fucking Problems (feat. Ty Dollar$)</div><!-- text-[.7rem] -->
+            <div id="artist" class="artists mt-4 text-[.57rem] font-bold sm:max-lg:text-[.6rem] max-w-[68vw] min-[1025px]:text-[.75rem]  md:max-w-[22vw] lg:max-w-[45vw] min-[361px]:max-[640px]:max-w-[38vw]">Asap Rocky</div>
+            <div class="more -mt-1 hover:scale-y-[1.5]">
+              <img id="more" title="song info" src="../Images/icons/more album info.png">
+            </div>
+            <div class="text-[.7rem] font-semibold w-[11.5rem]"> <!-- text-yellow-600 -->
+              <div id="specificTrackInfo" class="intrinsic-track-data w-full">
+                <div class="track-info w-full h-20 bg-black/70 text-[.5rem] px-2">
+                  <div id="album" class="album w-full truncate">Album: Way-Up</div>
+                  <div id="label" class="label w-full truncate">Label: Astro world music group</div>
+                  <div id="released" class="released w-full truncate">Released: 2020</div>
+                  <div id="shazammed" class="shazammed w-full truncate">shazammed: secs ago</div>
+                </div>
+              </div>
+              <div id="shaScore" class="shazam-score pl-0 mt-2 text-white font-light text-sm flex items-center justify-start"><img class=" rounded-full bg-yellow-700 -ml-2 mr-2" src="../Images/icons/shazam result.png">
+                <div id="noShazams" class="text-[.47rem] sm:max-lg:text-[.58rem] min-[1025px]:text-[.6rem]">10,396,140 shazams</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="related" class="related flex  tracks flex-col w-full h-[14.2rem] absolute bottom-0 z-[1] cursor-default text-[.76rem]"> <!-- flex -->
+            <div id="playAll" class="loop w-[10rem] h-10 xl:w-[15rem] sm:max-lg:w-[10rem] sm:max-lg:h-10  rounded-3xl mx-auto mb-2 xl:h-12 mt-5 hover:scale-8 hover:shadow-sm text-white font-semibold hover:shadow-gray-50 bg-gray-400/70 flex justify-center items-center xl:mb-5">Play All</div>
+           <div  id="relatedContainer" class="related-container divide-lines pb-2 tracks overflow-auto overflow-x-hidden h-[80%] divide-y-2 divide-gray-300/40">
+
+            <div class="song1 w-full h-14 flex pl-2 hover:bg-gray-400/30">
+              <div class="track-pic1 w-16 h-[3.3rem] rounded-sm self-end flex justify-center items-center text-white">
+                <!-- <i id="relPlay" class="fa-solid fa-play scale-100 hover:scale-8"></i> -->
+                <div id="relSpinner" class="w-5 h-5 rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div>
+                </div>
+              <div class="truncate track-info ml-5 w-[10.2rem] xl:w-[12rem] xl:ml-12 text-[.68rem] text-white font-medium sm:max-lg:ml-5 sm:max-lg:font-[400]  sm:max-[800px]:w-[8rem] min[801px]:max-lg:w-[10rem]">
+                <div class="track-name"> 2grown (feat. Lil Uzi Vert)</div>
+                <div class="track-artist">Lil tjay</div>
+              </div>
+            </div>
+            <div class="song2 w-full h-14 flex pl-2">
+              <div class="track-pic2 w-16 h-[3.3rem] rounded-sm self-end "></div>
+              <div class="track-info w-[10.2rem] xl:w-[12rem] truncate ml-5 xl:ml-12 text-white font-medium sm:max-lg:ml-5 sm:max-lg:font-[400] text-[.68rem]  sm:max-[800px]:w-[8rem] min[801px]:max-lg:w-[10rem]">
+                <div class="track-name"> Pop Out (feat. lil tjay)</div>
+                <div class="track-artist">Polo G</div>
+              </div>
+            </div>
+            <div class="song3 w-full h-14 flex pl-2">
+              <div class="track-pic3 w-16 h-[3.3rem] rounded-sm self-end "></div>
+              <div class="track-info  w-[10.2rem] truncate ml-5 xl:ml-12  xl:w-[12rem] text-[.68rem]  text-white font-medium sm:max-lg:ml-5 sm:max-lg:font-[400] sm:max-[800px]:w-[8rem] min[801px]:max-lg:w-[10rem]">
+                <div class="track-name"> we paid</div>
+                <div class="track-artist">Lil baby & 42Dugg</div>
+              </div>
+            </div>
+           
+           </div>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div id="playlist" class="playlist w-full h-full hidden absolute m-auto inset-0 backdrop-blur-md"> <!--xl:w-96 lg:w-32 md:w-80 max-[640px]:w-full max-[640px]:h-full w-72   -->
+      <div class="list w-full h-full flex flex-col divide-cyan-50/30  bg-black/40">
+        <div class="w-full h-[10%]  bg-gray-600 flex items-center">
+          <div id="closeList" class="bg-black w-8 h-8 ml-2 rounded-full flex justify-center items-center hover:shadow-sm hover:shadow-white"> <!-- ml-10 -->
+            <i class="fa-solid fa-arrow-left text-white"></i>
+          </div>
+          <span class="text-lg font-bold text-white m-auto mx-[29%]">PlayList</span>
+        </div>
+        <div class="tracks hidden divide-y-2 w-full h-[90%] lg:text-s2m  scroll-smooth scroll-m-1 cursor-default pb-2  pt-5 overflow-auto overflow-x-hidden flex-col"> <!-- flex -->
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2">
+            <div class="song-info w-[90%]">
+              <div class="song-title truncate w-[80%]  text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like flex justify-center items-center h-full w-[20%] pr-5"><img src="../Images/icons/Mask group.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%]">
+              <div class="song-title text-white font-light truncate w-[80%] ">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="flex justify-center items-center h-full w-[20%] pr-5 like"><img src="../Images/icons/Mask group.png" class="scale-5" alt="like-png"></div>
+          </div> <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%]">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like pr-5 flex justify-center items-center h-full w-[20%]"><img src="../Images/icons/Mask group.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%]">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like pr-5 flex justify-center items-center h-full w-[20%]"><img src="../Images/icons/Mask group.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%]">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like pr-5 flex justify-center items-center h-full w-[20%]"><img src="../Images/icons/Mask group.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%]">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like pr-5 flex justify-center items-center h-full w-[20%]"><img src="../Images/icons/Mask group.png" class="scale-5" alt="like-png"></div>
+          </div>      
+      </div>
+    </div>
+    </div>
+
+    <div id="favourites" class="favourites w-full h-full absolute m-auto inset-0 backdrop-blur-md cursor-default"> <!--xl:w-96 lg:w-32 md:w-80 max-[640px]:w-full max-[640px]:h-full w-72   -->
+      <div class="list w-full h-full flex flex-col divide-cyan-50/30  bg-black/40">
+        <div class="w-full h-[10%] flex items-center">
+          <div id="closeFav" class="bg-black w-8 h-8 ml-2 rounded-full flex justify-center items-center hover:shadow-sm hover:shadow-white"> <!-- ml-10 -->
+            <i class="fa-solid fa-arrow-left text-white"></i>
+          </div>
+          <span class="text-lg font-bold text-white m-auto mx-[26%]">favourites</span>
+        </div>
+        <div class="tracks hidden divide-y-2 w-full h-[90%] lg:text-s2m  scroll-smooth scroll-m-1 cursor-default pb-2 pt-5  overflow-auto overflow-x-hidden flex-col"> <!-- flex -->
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2">
+            <div class="song-info  w-[90%] ">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%] ">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2">
+            <div class="song-info  w-[90%] ">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+          </div>
+          <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+            <div class="song-info  w-[90%] ">
+              <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+              <div class="album">Destined 2 Win</div>
+            </div>
+            <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+          </div>      
+      <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+        <div class="song-info  w-[90%] ">
+          <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+          <div class="album">Destined 2 Win</div>
+        </div>
+        <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+      </div>
+      <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between pl-2 ">
+        <div class="song-info  w-[90%] ">
+          <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+          <div class="album">Destined 2 Win</div>
+        </div>
+        <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+      </div>
+      <div class="w-full hover:bg-slate-300/20 h-3.5 flex justify-between  pl-2 ">
+        <div class="song-info  w-[90%] ">
+          <div class="song-title truncate w-[80%] text-white font-light">Run it Up ft Offset & Money bag Yoo</div>
+          <div class="album">Destined 2 Win</div>
+        </div>
+        <div class="like w-[20%] hover:scale-3 flex items-center"><img src="../Images/icons/side.png" class="scale-5" alt="like-png"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+      
+
+   
+   <script type="module" src="script.js"></script> 
+</body>
+</html>

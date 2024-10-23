@@ -1,0 +1,134 @@
+old
+
+
+audio.addEventListener("ended", () => {
+      currentSongIndex++
+      let songContainer = document.getElementsByClassName("containing")
+      if(currentSongIndex >= searchSongsUrl.length){
+        currentSongIndex = 0
+        Array.from(songContainer).forEach(div => {
+          if(div.id !== currentSongIndex.toString()){
+            div.style.color = "#ffffff"
+          }
+          else{
+            div.style.color = "#de2d9d"
+          }
+        })
+        audio.src = searchSongsUrl[currentSongIndex]
+        audio.pause()
+      }
+      else
+      {
+        Array.from(songContainer).forEach(div => {
+          if(div.id !== currentSongIndex.toString()){
+            div.style.color = "#ffffff"
+          }
+          else{
+            div.style.color = "#de2d9d"
+          }
+        })
+      audio.src = searchSongsUrl[currentSongIndex]
+      audio.play()}
+  
+      audio.addEventListener("waiting", () => {
+        let spinnerArray = document.getElementsByClassName("spinner")
+        let icon = document.getElementsByClassName("icon")
+        Array.from(spinnerArray).forEach(spin => {
+         spin.style.display = "none"
+        })
+        Array.from(icon).forEach(plyBtn => {
+         if(plyBtn.id !== `icon${currentSongIndex}`){
+           plyBtn.classList.remove("fa-pause")
+           plyBtn.classList.add("fa-play")
+           plyBtn.style.display = "block"
+         }
+         else{
+           plyBtn.style.display = "none"
+           let spinner = document.querySelector(`#spinner${currentSongIndex}.spinner`)
+           spinner.style.display = "block"
+         }
+         
+        })
+  
+       } )
+     
+       audio.addEventListener("canplay", () => {
+         let spinnerArray = document.getElementsByClassName("spinner")
+         Array.from(spinnerArray).forEach(spin => {
+           spin.style.display = "none"
+          })
+          let spinner = document.querySelector(`#spinner${currentSongIndex}.spinner`)
+            spinner.style.display = "none"
+            let plyBtn = document.getElementsByClassName("icon")
+            Array.from(plyBtn).forEach(iplay => {
+              if(iplay.id === `icon${currentSongIndex}`){
+                iplay.classList.remove("fa-play")
+                iplay.classList.add("fa-pause")
+                iplay.style.display = "block"
+              }
+              else{
+                iplay.classList.remove("fa-pause")
+                iplay.classList.add("fa-play")
+                iplay.style.display = "block"
+              }
+            })
+       } )
+     
+       audio.addEventListener("play", () => {
+         let plyBtn = document.getElementsByClassName("icon")
+         Array.from(plyBtn).forEach(iplay => {
+           if(iplay.id === `icon${currentSongIndex}`){
+             iplay.classList.remove("fa-play")
+             iplay.classList.add("fa-pause")
+             iplay.style.display = "block"
+           }
+           else{
+             iplay.classList.remove("fa-pause")
+             iplay.classList.add("fa-play")
+             iplay.style.display = "block"
+           }
+         })
+       })
+    })
+
+
+
+
+
+
+
+
+
+
+
+New 
+
+
+
+ audio.addEventListener("ended", () => {
+      currentSongIndex++
+      let icons = document.getElementsByClassName("icon")
+      Array.from(searchResults).forEach (div =>{
+        if(div.id !== currentSongIndex.toString()){
+          console.log("no")
+          div.style.color = "#ffffff"
+        }
+        else{
+          console.log("yes")
+          div.style.color = "#de2d9d"
+        }
+      }
+    )
+    Array.from(icons).forEach(icon => {
+      if(icon.id !== `icon${currentSongIndex}`){
+        icon.classList.remove("fa-pause")
+        icon.classList.add("fa-play")
+      }
+      else{
+        icon.classList.add("fa-pause")
+        icon.classList.remove("fa-play")
+      }
+    })
+    audio.src = musicUrls[currentSongIndex]
+    //audio.play()
+    })

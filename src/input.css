@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Lemon&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  /*   html{
+        @apply bg-yellow-700;
+    } */
+     body{
+      background-image: url(../Images/unsplash_X4SM319VgFU.png);
+      min-height: 100vh;
+     }
+     .musicBox{
+      background-image: linear-gradient(to right, #9b999923, #fff8f818);
+      height: 95vh;
+      border-image: linear-gradient(-30deg, #3C77FF, #EE1010) 1 ;
+     }
+
+     .search-results{
+      font-family: "Lemon", serif;
+      font-weight: 400;
+      font-style: normal;
+     }
+    .title{
+      font-family: "Ledger", serif;
+      font-weight: 400;
+      font-style: normal;
+    } 
+    .artist-name{
+      font-family: "Lato", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+    }
+     .artist-pic{
+      background-image: url(../Images/Liltjay.jpeg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+     
+
+     @media (max-width: 639px) { 
+        .menu{
+          transform: scale(0.65, 0.65);
+        }
+      }
+      .artist-pic{
+        background-image: url(../Images/Liltjay.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: contrast(1.2);
+        margin: auto;
+        margin-top: 2rem;
+      }
+      .range{
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 2rem;
+       /*  background: linear-gradient(to right, #923A72 0%, #ffffff 0%); */
+        transition: background-color 0.2s ease-in 0;
+      }
+      .range::-webkit-slider-runnable-track{
+       height: 5px; 
+        border-radius: 2.5rem;
+      }
+
+      
+      .range::-moz-range-track{
+        height: 5px; 
+        border-radius: 2rem;
+        background: #ffffff;
+      }
+      .range::-moz-range-thumb{
+        background-color: #120f01;
+        color: #923A72;
+        height: 20px;
+        width: 20px;
+        margin-top: -5px;
+        border-radius: 50%;
+      }
+       .range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        justify-content: center;
+        align-items: center;
+        height: 12px;
+        width: 12px;
+        margin-top: -2px;
+        border: 3px solid #5d2588;
+        border-radius: 50%;
+        background: #030303;
+       }
+      .search::placeholder{
+        padding: 1.5rem;
+        color: rgb(231, 228, 228);
+      }
+      .search{
+        padding: .8rem;
+        
+      }
+      .search:focus{
+        outline: 1px solid rgb(91, 12, 12);
+      } 
+      .menu-effect{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: black;
+        transform: scale(.9);
+      }
+      .menu{
+        margin: auto;
+        transform: scale(1.63);
+      }
+         .menu-effect:hover{
+          transform: scale(.75);
+          box-shadow: 0 0 2px 2px white;
+        } 
+        .search{
+          display: none;
+          
+        }
+         .search-group:hover .search{
+         animation-name: search;
+         animation-duration: 1s;
+         animation-delay: 0;
+         display: block;
+         animation-fill-mode: forwards;
+        } 
+        @keyframes search {
+          0%{
+           width: 41.67%;
+          }
+          100%{
+           width: 91.67%;
+          }
+        }
+        .gradient{
+          background: linear-gradient(75deg, #FE8F2D, #de2d9d);
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+        .vol-cntrl{
+          opacity: 0;
+          display: none;
+        }
+        .vol:has(.vol-icon:hover), .vol:hover{
+          transition: all 3s ease-in-out 0;
+          animation-name: vol;
+          animation-duration: 1s;
+          animation-delay: 0;
+          animation-timing-function: ease-in-out;
+          animation-fill-mode: forwards;
+        }
+        .vol-icon:hover ~ .vol-cntrl{
+          transition: all 3s ease-in-out 0;
+          animation-name: vol-expand;
+          display: block;
+          animation-duration: 1s;
+          animation-delay: 0;
+          animation-timing-function: ease-in-out;
+          animation-fill-mode: forwards;
+        }
+        .vol:hover .vol-cntrl{
+          transition-property: all;
+          animation-name: vol-expand;
+          display: block;
+          animation-duration: 1s;
+          animation-delay: 0;
+          animation-timing-function: ease-in-out;
+          animation-fill-mode: forwards;
+        }
+        .pause:hover{
+          box-shadow: 0 0 2px 1px rgb(230, 202, 230);
+        }
+        @keyframes vol {
+          from{
+            opacity: 0.5;
+            width: 10%;
+          }
+          to{
+            opacity: 1;
+            width:33.33%;
+          }
+         }
+         @keyframes vol-expand {
+          from{
+            opacity: 0.5;
+            width: 20%;
+          }
+          to{
+            opacity: 1;
+            width: 100%;
+          }
+         }
+      
+        @media  (min-height: 820px){
+          .musicBox{
+           height: 65vh;
+          }
+         }
+       
+        @media (min-height: 800px){
+          .menu-container{
+            margin-top: 2rem;
+          }
+          .pie{
+            top: 8rem;
+          }
+         }
+         @media  (min-height: 1024px){
+          .musicBox{
+           height: 52vh;
+          }
+          .shazam-click{
+            top: 690px;
+          }
+          .artist-pic{
+           margin-top: 8vh;
+          }
+          .time{
+           margin-top: 3vh;
+         }
+         .playback-btn{
+           background-color: #3C77FF;
+           margin-bottom: 0;
+           margin-top: 7.25rem;
+         }
+         .utility-components{
+           margin-top: 70rem;
+         }
+         }
+         .tracks::-webkit-scrollbar{
+          width: .25rem;
+         }
+         .tracks::-webkit-scrollbar-track{
+          border-radius: 1rem;
+          background-color: rgba(106, 105, 105, 0.468);
+         }
+         .tracks::-webkit-scrollbar-thumb{
+          border-radius: 1rem;
+          /* background-color: rgb(240, 141, 70); */
+          background-color: rgba(240, 141, 70, 0.55);
+         
+         }
+         .tracks::-webkit-scrollbar-thumb:hover{
+          background-color: rgb(196, 104, 39);
+         }
+
+         @media  (max-width: 280px){
+          .tracks{
+           font-size: 13px;
+          }
+         }
+         @media  (min-width: 281px){
+          .tracks{
+           font-size: 0.875rem;
+           line-height: 1.25rem;
+          }
+         }
+         .shazam-result{
+            font-family: "Lemon", serif;
+            font-weight: 400;
+            font-style: normal;
+         }
+} 
+
+.likee{
+  display: none;
+ }
+
+.menutab{
+  display: none;
+  animation-name: elastic;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes elastic {
+  from{
+    top:5.7rem ;
+   height: 7.8rem;
+  }
+  to{
+    top:5rem;
+    height: 7rem ;
+  }
+}
+
+.favourites{
+  display: none;
+}
+
+.playlist{
+  display: none;
+}
+ .related{
+  display: none;
+} 
+
+.results-info{
+  display: block;
+}
+
+.shazam-result{
+  display: none;
+}
+
+.intrinsic-track-data{
+  display: none;
+}
+
+.reltrackpics{
+  /* bg color: #140f0b; black */
+   /*p color: #f0b009; yellow  */
+ /*  color:#db9b0767;  */
+ /* t  color: #c49009; lesser yellow */
+ /* accent color color: #b37e08; much lesser yellow*/
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.repeat-effect{
+  color: #c01111f3;
+}
+
+.track-pic1{
+  background-image: url(../Images/Liltjay.jpeg);
+  background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+.track-pic2{
+  background-image: url(../Images/Polo\ G.jpeg);
+  background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+.track-pic3{
+  background-image: url(../Images/Lil\ Baby\ Releases\ New\ Song\ “Dark\ Mode”\ About\ Ja\ Morant\ In\ New\ Beats\ Campaign.jpeg);
+  background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+
+.spinner{
+  display: none;
+}
+
+.shazam-click{
+  display: none;
+  border-top-left-radius: 0.435rem;
+  border-top-right-radius: 0.435rem;
+}
+
+.shazam-range{
+  display: none;
+}
+
+.search-results-container{
+  display: none;
+}
+
+.search-results:first-child{
+  border-top-left-radius: 1rem ;
+  border-top-right-radius: 1rem ;
+}
+
+.search-result-spinner{
+  display: none;
+}
