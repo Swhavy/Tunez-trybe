@@ -123,12 +123,11 @@
             <img id="prevSong" src="../Images/icons/Previous.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="previous-btn">
             <!-- <img src="../Images/icons/Mask group-2.png" class="w-10 hover:scale-8 pause h-10 rounded-full sm:scale-8 bg-purple-500 -mt-1 lg:scale-90" alt="pause-btn"> -->
              <div class="flex justify-center items-center h-10 rounded-full bg-purple-500 hover:scale-8 w-10 ">
-              <i id="play" class="fa-solid fa-play scale-150"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause-->
+             <i id="play" class="fa-solid fa-play scale-150 play1"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause--> <!-- class=" fa-solid fa-play scale-150 play1" -->
+             <div id="audioSpinner" class="w-5 h-5 m-auto rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
              </div>
             <img id="nextSong" src="../Images/icons/Next.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="next-btn">
           </div>
-        </div>
-
           <div id="shazamUi" class="shazam-ui hidden">
             <div class="w-full overflow-hidden flex justify-center items-center h-[18rem] absolute bottom-0 bg-gradient-to-r backdrop-blur-md from-slate-200/60 to-purple-400/40">
               <div class="bg-gray-200 flex justify-center absolute m-auto inset-0 animate-ping items-center w-[13rem] h-[13rem] rounded-full">
@@ -150,6 +149,11 @@
                 <source src="./musics/01 - Whatcha Say - (Musicfire.in) - Copy - Copy.mp3" type="audio/mp4">
                </audio>
                <input id="shazamRangeTrk" type="range" class="range shazam-range ml-8 w-8/12 justify-self-center self-center" min="0" max="150" value="20">
+
+               <audio id="identifiedAudio">
+                <source src="./musics/01 - Whatcha Say - (Musicfire.in) - Copy - Copy.mp3" type="audio/mp4">
+               </audio>
+               <input id="identifiedRangeTrk" type="range" class="range identified-range ml-8 w-8/12 justify-self-center self-center" min="0" max="150" value="20">
 
 
             <div class="w-full h-[17.8rem] relative bg-black/40">

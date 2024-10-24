@@ -1,5 +1,8 @@
 const shazamUI = document.getElementById("shazamUi")
 let shazamAudio = document.getElementById("shazamAudio")
+let audioSpinner = document.getElementById("audioSpinner")
+let identifiedRangeTrk = document.getElementById("identifiedRangeTrk")
+let identifiedAudio = document.getElementById("identifiedAudio")
 let mainSearchContainer = document.getElementById("mainSearchContainer")
 let automaticPlayId
 let searchSongsUrl = []
@@ -229,6 +232,24 @@ audio.ontimeupdate = () => {
   timeSpan.textContent = formatTime(audio.currentTime) + "/"
 }
 
+audio.addEventListener("waiting", () => {
+  audioSpinner.style.display = "block"
+  play.style.display = "none"
+ })
+
+ audio.addEventListener("canplay", () => {
+  audioSpinner.style.display = "none"
+  play.style.display = "block"
+ })
+
+ audio.addEventListener("play", () => {
+  audioSpinner.style.display = "none"
+  play.classList.remove("fa-play")
+  play.classList.add("fa-pause")
+  play.style.display = "block"
+ })
+
+
 function formatTime(time){
  let durMin = Math.floor(time / 60) 
  let durSec = Math.floor(time % 60 )
@@ -243,10 +264,10 @@ range.addEventListener("input", () => {
   range.style.background = `linear-gradient(to right, #923A72 ${percentage}%, #ffffff ${percentage}%)`
 })
 
-//relatedConfig
+//Shazammed songs playback config 
 
 shazamAudio.onloadedmetadata = () => {
-  shazamRangeTrk.max = audio.duration
+  shazamRangeTrk.max = shazamAudio.duration
 }
 
 shazamAudio.ontimeupdate = () => {
@@ -264,7 +285,27 @@ shazamRangeTrk.addEventListener("input", () => {
   shazamRangeTrk.style.background = `linear-gradient(to right, #923A72 ${percentage}%, #ffffff ${percentage}%)`
 })
 
-//End of relatedConfig
+identifiedAudio.onloadedmetadata = () => {
+  identifiedRangeTrk.max = identifiedAudio.duration
+}
+
+identifiedAudio.ontimeupdate = () => {
+  identifiedRangeTrk.value = identifiedAudio.currentTime
+  let max = identifiedRangeTrk.max
+  let percentage = (identifiedRangeTrk.value/max) * 100
+  identifiedRangeTrk.style.background = `linear-gradient(to right, #923A72 ${percentage}%, #ffffff ${percentage}%)`
+}
+
+identifiedAudio.addEventListener("input", () => {
+  let value = identifiedRangeTrk.value
+  identifiedAudio.currentTime = value
+  let max = identifiedRangeTrk.max
+  let percentage = (value/max) * 100
+  identifiedRangeTrk.style.background = `linear-gradient(to right, #923A72 ${percentage}%, #ffffff ${percentage}%)`
+})
+
+
+//End of Shazammed songs playback config 
 
 
 like.addEventListener("click", () => {
@@ -349,9 +390,9 @@ async function identifySong(song) {
       songBtn.style.borderColor = `#${coolors[3]}`
       relatedBtn.style.backgroundColor = `#${coolors[5]}`
       relatedBtn.style.Color = `#${coolors[4]}`
-      specificTrackInfo.style.Color = `#${coolors[4]}`
-      specificTrackInfo.style.backgroundColor.opa= "0.6"
-      specificTrackInfo.style.backgroundColor = `#${coolors[5]}62`
+       specificTrackInfo.style.Color = `#${coolors[4]}`
+      // specificTrackInfo.style.backgroundColor.opacity= "0.6"
+       specificTrackInfo.style.backgroundColor = `#${coolors[5]}62`
       playAll.style.Color = `#${coolors[4]}`
       playAll.style.backgroundColor = `#${coolors[2]}67`
       relatedBtn.style.borderColor = `#${coolors[3]}`
@@ -367,6 +408,7 @@ async function identifySong(song) {
       songBtn.style.backgroundColor = `#${coolors[2]}`
       relatedBtn.style.backgroundColor = `#${coolors[5]}`
     })
+    //coolors was here
     console.log(coolors)
    uI(result)
    IdentifiedSong.push(result.track.hub.actions[1].uri)
@@ -533,7 +575,7 @@ songBtn.addEventListener("click", () => {
 function relatedSongsUpdate(songs) {
 
   relatedContainer.innerHTML = ' '
-  songId = 0
+ let songId = 0
 
   songs.forEach(track => {
 
@@ -575,12 +617,15 @@ function relatedSongsUpdate(songs) {
 
   playAll.addEventListener("click", () => {
     shazamAudio.src = musicUrls[0]
-    let particularSong = document.getElementById("0")
-    particularSong.style.color = "#db7114"
+    // let particularSong = document.getElementById("0")
+    // particularSong.style.color = "#db7114"
     let songContainer = document.getElementsByClassName("relsong")
     Array.from(songContainer).forEach(div => {
       if(div.id !== "0"){
         div.style.color = "#ffffff"
+      }
+      else{
+        div.style.color = "#db7114"
       }
     })
     shazamAudio.play()
@@ -655,7 +700,7 @@ function relatedSongsUpdate(songs) {
 
   shazamAudio.addEventListener("ended", () => {
     currentSongIndex++
-    let particularSong = document.getElementById(currentSongIndex.toString())
+    //let particularSong = document.getElementById(currentSongIndex.toString())
     let songContainer = document.getElementsByClassName("relsong")
     if(currentSongIndex >= musicUrls.length){
       currentSongIndex = 0
@@ -674,8 +719,11 @@ function relatedSongsUpdate(songs) {
         if(div.id !== currentSongIndex.toString()){
           div.style.color = "#ffffff"
         }
+        else{
+          div.style.color = "#db7114"
+        }
       })
-    particularSong.style.color = "#db7114"
+    //particularSong.style.color = "#db7114"
     shazamAudio.src = musicUrls[currentSongIndex]
     shazamAudio.play()}
 
@@ -988,44 +1036,44 @@ else{
   if(shazamPlay.classList.contains("fa-play")){
     shazamPlay.classList.remove("fa-play")
     shazamPlay.classList.add("fa-pause")
-    shazamAudio.src = IdentifiedSong[0] //IdentifiedSong[0]
+    identifiedAudio.src = IdentifiedSong[0] //IdentifiedSong[0]
     if(manipulatePlayBack){
-      shazamAudio.currentTime = manipulatePlayBack
-      shazamAudio.play()
+      identifiedAudio.currentTime = manipulatePlayBack
+      identifiedAudio.play()
     }
     else{
-      shazamAudio.play()
+      identifiedAudio.play()
     }
     
   }
   else{
     shazamPlay.classList.remove("fa-pause")
     shazamPlay.classList.add("fa-play")
-    manipulatePlayBack = shazamRangeTrk.value
-    shazamAudio.pause()
+    manipulatePlayBack = identifiedRangeTrk.value
+    identifiedAudio.pause()
   }
 
-   shazamAudio.addEventListener("waiting", () => {
+   identifiedAudio.addEventListener("waiting", () => {
     shazamSpinner.style.display = "block"
     shazamPlay.style.display = "none"
    })
   
-   shazamAudio.addEventListener("canplay", () => {
+   identifiedAudio.addEventListener("canplay", () => {
     shazamSpinner.style.display = "none"
     shazamPlay.style.display = "block"
    })
 
-   shazamAudio.addEventListener("play", () => {
+   identifiedAudio.addEventListener("play", () => {
     shazamSpinner.style.display = "none"
-    shazamPlay.style.classList.remove("fa-play")
-    shazamPlay.style.classList.add("fa-pause")
+    shazamPlay.classList.remove("fa-play")
+    shazamPlay.classList.add("fa-pause")
     shazamPlay.style.display = "block"
    })
 
-   shazamAudio.addEventListener("ended", () => {
-    shazamAudio.pause()
-    shazamPlay.style.classList.remove("fa-pause")
-    shazamPlay.style.classList.add("fa-play")
+   identifiedAudio.addEventListener("ended", () => {
+    identifiedAudio.pause()
+    shazamPlay.classList.remove("fa-pause")
+    shazamPlay.classList.add("fa-play")
    })
  })
 
@@ -1069,6 +1117,7 @@ function searchUpdate(search) {
   
 
   let searchNo = 0
+  searchSongsUrl = []
   search.forEach(data => {
 
   searchSongsUrl.push(data.track.hub.actions[1].uri)

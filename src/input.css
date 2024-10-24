@@ -309,7 +309,7 @@
 }
 
 .shazam-result{
-  display: none;
+  display: block;
 }
 
 .intrinsic-track-data{
@@ -374,5 +374,13 @@
 }
 
 .search-result-spinner{
+  display: none;
+}
+
+.identified-range{
+  display: none;
+}
+
+.play1{
   display: none;
 }
