@@ -563,7 +563,7 @@ video {
     } */
 
 body{
-  background-image: url(../Images/unsplash_X4SM319VgFU.png);
+  background-image: url(./images/unsplash_X4SM319VgFU.png);
   min-height: 100vh;
 }
 
@@ -593,7 +593,7 @@ body{
 }
 
 .artist-pic{
-  background-image: url(../Images/Liltjay.jpeg);
+  background-image: url(./images/Liltjay.jpeg);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -606,7 +606,7 @@ body{
 }
 
 .artist-pic{
-  background-image: url(../Images/Liltjay.jpeg);
+  background-image: url(./images/Liltjay.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1897,21 +1897,21 @@ body{
 }
 
 .track-pic1{
-  background-image: url(../Images/Liltjay.jpeg);
+  background-image: url(./images/Liltjay.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .track-pic2{
-  background-image: url(../Images/Polo\ G.jpeg);
+  background-image: url(./images/Polo\ G.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .track-pic3{
-  background-image: url(../Images/Lil\ Baby\ Releases\ New\ Song\ “Dark\ Mode”\ About\ Ja\ Morant\ In\ New\ Beats\ Campaign.jpeg);
+  background-image: url(./images/Lil\ Baby\ Releases\ New\ Song\ “Dark\ Mode”\ About\ Ja\ Morant\ In\ New\ Beats\ Campaign.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

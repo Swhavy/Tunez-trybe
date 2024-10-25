@@ -76,38 +76,38 @@ let jamz = [
     song: "musics/01 - Whatcha Say - (Musicfire.in) - Copy - Copy.mp3",
     title: "Whatcha Say ",
     artist: "Jason Durelo",
-    image: "../Images/WatchaSay.png"
+    image: "./images/WatchaSay.png"
   },
   {
   song: "musics/01 chandelier_sia.mp3",
   title: "Chandelier",
   artist: "Sia",
-  image: "../Images/sia.png"
+  image: "./images/sia.png"
  }, {
   song: "musics/01 Never Go Down (feat_ Limoblaze).mp3",
   title: "Never Go Down",
   artist: "Ada Ehi feat_ Limoblaze",
-  image: "../Images/Never Go down.png"
+  image: "./images/Never Go down.png"
  }, {
   song: "musics/03 Trap (feat. Lil Baby).mp3",
   title: "Trap",
   artist: "Saint Jhn feat_ Lil Baby",
-  image: "../Images/Trap.png"
+  image: "./images/Trap.png"
  }, {
   song: "musics/04 Grace.mp3",
   title: "Grace",
   artist: "Lil Baby feat_ Kodak Black",
-   image: "../Images/Grace.png"
+   image: "./images/Grace.png"
  }, {
   song: "musics/05 Woah_1.mp3",
   title: "Woah",
   artist: "Lil Baby",
-   image: "../Images/Woah.png"
+   image: "./images/Woah.png"
  }, {
   song:  "musics/07 I HATE EVERYBODY - (SongsLover.com).mp3",
   title: "I HATE EVERYBODY",
   artist: "Halsey",
-   image: "../Images/Halsey.png"
+   image: "./images/Halsey.png"
  },
 {
   song:  "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/4c/4d/554c4d1a-14e4-a4d8-76ee-ed2bb00f08dd/mzaf_6348356541043285478.plus.aac.ep.m4a",
@@ -486,14 +486,14 @@ try {
     musicMain.style.display = "block"
   })
 
-   audioArt.src = "../Images/281186.jpg"
+   audioArt.src = "./images/281186.jpg"
 
 function uI (info) {
   trackName.textContent = info.track.title
   artist.textContent = info.track.subtitle
   let image = info.track.images.background
   if(!image){
-    audioArt.src = "../Images/281186.jpg"
+    audioArt.src = "./images/281186.jpg"
   }else{
     audioArt.src = image
   }
@@ -506,13 +506,13 @@ let toggle = false
 more.addEventListener("click", () => {
   toggle = !toggle
   if(toggle){
-    more.src = "../Images/icons/more album info-1.png"
+    more.src = "./images/icons/more album info-1.png"
      resultsInfo.style.bottom = "1.25rem"
     specificTrackInfo.style.display = "block"
   }
 
  else{
-  more.src = "../Images/icons/more album info.png"
+  more.src = "./images/icons/more album info.png"
   resultsInfo.style.bottom = "4rem"
   specificTrackInfo.style.display = "none"
  }
