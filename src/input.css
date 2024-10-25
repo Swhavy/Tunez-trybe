@@ -309,7 +309,7 @@
 }
 
 .shazam-result{
-  display: block;
+  display: none;
 }
 
 .intrinsic-track-data{
@@ -381,6 +381,6 @@
   display: none;
 }
 
-.play1{
+.audio-spinner{
   display: none;
 }

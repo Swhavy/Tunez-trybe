@@ -42,7 +42,8 @@ module.exports = {
         3.5: "3.5rem",  
       },
       screens:{
-        'h-800': {'raw': '(min-height: 800px)'}
+        "h-800": "800px",
+        "laptop": "1025px"
       }
     },
   },

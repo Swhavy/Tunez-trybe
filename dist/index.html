@@ -123,8 +123,8 @@
             <img id="prevSong" src="../Images/icons/Previous.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="previous-btn">
             <!-- <img src="../Images/icons/Mask group-2.png" class="w-10 hover:scale-8 pause h-10 rounded-full sm:scale-8 bg-purple-500 -mt-1 lg:scale-90" alt="pause-btn"> -->
              <div class="flex justify-center items-center h-10 rounded-full bg-purple-500 hover:scale-8 w-10 ">
-             <i id="play" class="fa-solid fa-play scale-150 play1"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause--> <!-- class=" fa-solid fa-play scale-150 play1" -->
-             <div id="audioSpinner" class="w-5 h-5 m-auto rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
+             <i id="play" class="fa-solid fa-play scale-150"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause--> <!-- class=" fa-solid fa-play scale-150 play1" -->
+             <div id="audioSpinner" class="audio-spinner w-5 h-5 m-auto rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
              </div>
             <img id="nextSong" src="../Images/icons/Next.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="next-btn">
           </div>
@@ -157,7 +157,7 @@
 
 
             <div class="w-full h-[17.8rem] relative bg-black/40">
-              <div id="shazamPlayContainer" class="pause w-20 h-20 min-[1025px]:h-24 min-[1025px]:w-24  sm:max-lg:scale-8 sm:max-lg:hover:scale-5 shadow-sm shadow-gray-50 hover:scale-8 bg-black rounded-full absolute z-50 flex justify-center items-center top-40 sm:max-lg:right-4 right-1 min-[1025px]:right-10"><i id="shazamPlay" class="fa-solid fa-play text-white scale-[2]"></i>
+              <div id="shazamPlayContainer" class="pause w-20 h-20 laptop:h-24 laptop:w-24  sm:max-lg:scale-8 sm:max-lg:hover:scale-5 shadow-sm shadow-gray-50 hover:scale-8 bg-black rounded-full absolute z-50 flex justify-center items-center top-40 sm:max-lg:right-4 right-1 laptop:right-10"><i id="shazamPlay" class="fa-solid fa-play text-white scale-[2]"></i>
               
                 <div id="shazamSpinner" class="w-5 hidden h-5 absolute m-auto inset-0 rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
 
@@ -166,13 +166,13 @@
               <div class="w-full h-12 absolute top-1 flex text-[.65rem] justify-around ">
                <!-- bg-gradient-to-r from-yellow-600 to-red-500 --> <div id="songBtn" class="song-btn w-[4rem] h-[2rem] sm:max-lg:ml-3 mix-blend-hard-light border-[.1px] hover:shadow-md cursor-default hover:shadow-gray-300 border-emerald-400  mt-5 ml-5 xl:-ml-10 rounded-2xl flex justify-center items-center"> <div class="text-white">Songs</div></div>
                <!-- bg-yellow-600 --> <div id="relatedBtn" class="Related-btn w-[4rem] h-[2rem] mix-blend-hard-light border-[.1px] border-emerald-400 sm:max-lg:mr-[4rem] hover:shadow-md cursor-default hover:shadow-gray-300   mt-5 mr-12 xl:mr-[9rem] rounded-2xl flex justify-center items-center"> <div class="text-white ">Related</div></div>
-                <div id="hideShazamResult" class="bg-rose-600/80 h-5 w-5 hover:shadow-rose-300 hover:shadow-sm hover:scale-8  min-[1025px]:w-8 min-[1025px]:h-8 sm:max-lg:w-5 sm:max-lg:h-5 absolute top-2 right-8 rounded-full"><img class="scale-8" src="../Images/icons/Close.png"></div>
+                <div id="hideShazamResult" class="bg-rose-600/80 h-5 w-5 hover:shadow-rose-300 hover:shadow-sm hover:scale-8  laptop:w-8 laptop:h-8 sm:max-lg:w-5 sm:max-lg:h-5 absolute top-2 right-8 rounded-full"><img class="scale-8" src="../Images/icons/Close.png"></div>
           </div>
 
 
           <div id="resultsInfo" class="results-info absolute bottom-16 left-5 text-white cursor-default"> <!-- use this in ur js code bottom = 1.25rem bottom-5 -->
-           <div id="trackName" class="track-name  text-[1.02rem] truncate  min-[361px]:max-[640px]:max-w-[42vw] max-w-[70vw] md:max-w-[22vw] lg:max-w-[45vw] sm:max-lg:text-[.68rem] min-[1025px]:text-[1.02rem] font-bold">Fucking Problems (feat. Ty Dollar$)</div><!-- text-[.7rem] -->
-            <div id="artist" class="artists mt-4 text-[.57rem] font-bold sm:max-lg:text-[.6rem] max-w-[68vw] min-[1025px]:text-[.75rem]  md:max-w-[22vw] lg:max-w-[45vw] min-[361px]:max-[640px]:max-w-[38vw]">Asap Rocky</div>
+           <div id="trackName" class="track-name  text-[1.02rem] truncate  min-[361px]:max-[640px]:max-w-[42vw] max-w-[70vw] md:max-w-[22vw] lg:max-w-[45vw] sm:max-lg:text-[.68rem] laptop:text-[1.02rem] font-bold">Fucking Problems (feat. Ty Dollar$)</div><!-- text-[.7rem] -->
+            <div id="artist" class="artists mt-4 text-[.57rem] font-bold sm:max-lg:text-[.6rem] max-w-[68vw] laptop:text-[.75rem]  md:max-w-[22vw] lg:max-w-[45vw] min-[361px]:max-[640px]:max-w-[38vw]">Asap Rocky</div>
             <div class="more -mt-1 hover:scale-y-[1.5]">
               <img id="more" title="song info" src="../Images/icons/more album info.png">
             </div>
@@ -186,7 +186,7 @@
                 </div>
               </div>
               <div id="shaScore" class="shazam-score pl-0 mt-2 text-white font-light text-sm flex items-center justify-start"><img class=" rounded-full bg-yellow-700 -ml-2 mr-2" src="../Images/icons/shazam result.png">
-                <div id="noShazams" class="text-[.47rem] sm:max-lg:text-[.58rem] min-[1025px]:text-[.6rem]">10,396,140 shazams</div>
+                <div id="noShazams" class="text-[.47rem] sm:max-lg:text-[.58rem] laptop:text-[.6rem]">10,396,140 shazams</div>
               </div>
             </div>
           </div>
