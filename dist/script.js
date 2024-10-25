@@ -467,12 +467,12 @@ try {
   
   playlistBtn.addEventListener('click', () => {
     menuTab.style.display = "none"
-    musicMain.style.display = "none"
+    musicMain.style.display = "block"
     playlist.style.display = "block"
   })
   favoritesBtn.addEventListener('click', () => {
     menuTab.style.display = "none"
-    musicMain.style.display = "none"
+    musicMain.style.display = "block"
     favorites.style.display = "block"
   })
 
