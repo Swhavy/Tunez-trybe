@@ -338,6 +338,7 @@ Shazam.addEventListener("click", () => {
         mediaRecordings = new MediaRecorder(stream)
         mediaRecordings.start()
     
+        audioChunks = []
         mediaRecordings.ondataavailable = function (e) {
             audioChunks.push(e.data)
         }
@@ -411,6 +412,7 @@ async function identifySong(song) {
     //coolors was here
     console.log(coolors)
    uI(result)
+   IdentifiedSong = []
    IdentifiedSong.push(result.track.hub.actions[1].uri)
     resultsInfo.style.display = "block"
     shazamResult.style.top = (mainEl.clientHeight - 70) + "px"
@@ -576,7 +578,7 @@ function relatedSongsUpdate(songs) {
 
   relatedContainer.innerHTML = ' '
  let songId = 0
-
+  musicUrls = []
   songs.forEach(track => {
 
    musicUrls.push(track.hub.actions[1].uri)
