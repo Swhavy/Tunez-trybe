@@ -1,5 +1,8 @@
 const shazamUI = document.getElementById("shazamUi")
 let shazamAudio = document.getElementById("shazamAudio")
+let searchSpinner = document.getElementById("searchSpinner")
+let errorMessage = document.getElementById("errorMessage")
+let searchSpinnerContent = document.getElementById("searchSpinnerContent")
 let audioSpinner = document.getElementById("audioSpinner")
 let identifiedRangeTrk = document.getElementById("identifiedRangeTrk")
 let identifiedAudio = document.getElementById("identifiedAudio")
@@ -409,8 +412,7 @@ async function identifySong(song) {
       songBtn.style.backgroundColor = `#${coolors[2]}`
       relatedBtn.style.backgroundColor = `#${coolors[5]}`
     })
-    //coolors was here
-    console.log(coolors)
+    
    uI(result)
    IdentifiedSong = []
    IdentifiedSong.push(result.track.hub.actions[1].uri)
@@ -423,7 +425,8 @@ async function identifySong(song) {
    await relatedSongs(result.track.key)
    await searchCount(result.track.key)
   } catch (error) {
-    console.error("Shavy sorry we ran intto an issue boss: " + error);
+    console.error("Swhavy sorry we ran intto an issue boss: " + error);
+    alert("An error occured please try again")
   }
   }
 
@@ -1080,9 +1083,43 @@ else{
  })
 
  searchIcon.addEventListener("click", () => {
+  if(search.style.display === "block"){
+    getSearchResult()
+  }
+ 
+  else{
+
+  }
+})
+
+function getSearchResult() {
   let query = search.value
-  search.value = " "
-  shazamSearch(query)
+  if(query){
+    search.value = ""
+    search.setAttribute("placeHolder", "search your desired track, album, playlist")
+    errorMessage.style.display = "none"
+    searchSpinnerContent.style.display = "block"
+    mainSearchContainer.style.display = "block"
+    shazamSearch(query)
+  }
+  else{
+    searchSpinnerContent.style.display = "none"
+    mainSearchContainer.style.display = "block"
+    errorMessage.style.display = "block"
+    errorMessage.textContent = "Please Provide a value"
+  }
+}
+
+ document.addEventListener("keydown", (e) => {
+  if(e.key === "Enter")
+ { 
+  if(search.value){
+    getSearchResult()
+  }
+}
+else{
+
+}
 })
 
  
@@ -1102,11 +1139,16 @@ async function shazamSearch(info) {
     let result = await response.json()
     let resultUiUpdater = result.tracks.hits
     searchUpdate(resultUiUpdater)
-    mainSearchContainer.style.display = "block"
+    searchSpinner.style.display = "none"
+    searchResults.style.display = "block"
     console.log(result)
   }
   catch(error) {
     console.error("boss Shazam search Yawa ooh: " + error)
+    searchSpinnerContent.style.display = "none"
+    searchSpinner.style.display = "block"
+    errorMessage.style.display = "block"
+    errorMessage.textContent = "An error occured please try checking your network connection and try again"
   }
 }
 

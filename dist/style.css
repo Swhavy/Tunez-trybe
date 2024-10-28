@@ -620,7 +620,6 @@ body{
   -moz-appearance: none;
        appearance: none;
   border-radius: 2rem;
-  /*  background: linear-gradient(to right, #923A72 0%, #ffffff 0%); */
   transition: background-color 0.2s ease-in 0;
 }
 
@@ -694,15 +693,39 @@ body{
 }
 
 .search{
-  display: none;
+  display: "none";
+}
+
+.search:not(:hover){
+  animation-name: rollback;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  background-color: #2d3b42;
+  transition: all 1s ease-out .2s;
+}
+
+@keyframes rollback {
+  0%{
+    width: 91.67%;
+  }
+
+  100%{
+    width: 5% ;
+    display: none;
+  }
 }
 
 .search-group:hover .search{
   animation-name: search;
   animation-duration: 1s;
-  animation-delay: 0;
   display: block;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
 }
 
 @keyframes search {
@@ -817,7 +840,6 @@ body{
   }
 
   .playback-btn{
-    background-color: #3C77FF;
     margin-bottom: 0;
     margin-top: 7.25rem;
   }
@@ -838,7 +860,6 @@ body{
 
 .tracks::-webkit-scrollbar-thumb{
   border-radius: 1rem;
-  /* background-color: rgb(240, 141, 70); */
   background-color: rgba(240, 141, 70, 0.55);
 }
 
@@ -1652,6 +1673,10 @@ body{
   padding: 0.25rem;
 }
 
+.p-10{
+  padding: 2.5rem;
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -1790,6 +1815,10 @@ body{
   opacity: 0.3;
 }
 
+.mix-blend-screen{
+  mix-blend-mode: screen;
+}
+
 .mix-blend-hard-light{
   mix-blend-mode: hard-light;
 }
@@ -1839,20 +1868,22 @@ body{
 .menutab{
   display: none;
   animation-name: elastic;
-  animation-duration: 1s;
-  animation-delay: 0s;
+  animation-duration: .6s;
+  animation-delay: 0;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.5, 2);
 }
 
 @keyframes elastic {
   from{
     top:5.7rem ;
+    opacity: .5;
     height: 7.8rem;
   }
 
   to{
     top:5rem;
+    opacity: 1;
     height: 7rem ;
   }
 }
@@ -1882,11 +1913,6 @@ body{
 }
 
 .reltrackpics{
-  /* bg color: #140f0b; black */
-  /*p color: #f0b009; yellow  */
-  /*  color:#db9b0767;  */
-  /* t  color: #c49009; lesser yellow */
-  /* accent color color: #b37e08; much lesser yellow*/
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -1935,6 +1961,10 @@ body{
   display: none;
 }
 
+.search-results{
+  display: none;
+}
+
 .search-results:first-child{
   border-top-left-radius: 1rem ;
   border-top-right-radius: 1rem ;
@@ -1949,6 +1979,10 @@ body{
 }
 
 .audio-spinner{
+  display: none;
+}
+
+.error-message{
   display: none;
 }
 
@@ -2473,3 +2507,4 @@ body{
     width: 15rem;
   }
 }
+

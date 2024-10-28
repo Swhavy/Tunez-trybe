@@ -19,18 +19,15 @@
               <img id="menu" src="./images/icons/Menu.png" alt="Menu" class="menu scale-1.8  sm:scale-none"> 
             </div>
             <div class="search-group flex w-11/12 justify-end pl-1">
-                 <input id="search" type="text" class="search bg-slate-700 w-11/12 -mr-12 h-8 rounded-3xl self-center text-gray-200" placeholder="search your desired track, album, playlist"> 
+                 <input id="search" type="text" class="search bg-slate-700  -mr-12 h-8 rounded-3xl self-center text-gray-200" placeholder="search your desired track, album, playlist">
             <img src="./images/icons/SearchIcon.png" id="searchIcon" class="search-icon scale-5 sm:scale-0.65 lg:scale-85 ">
             </div>
             <div id="mainSearchContainer" class="search-results-container pie w-5/6 h-42 absolute z-10 top-20 h-800:top-32 mx-auto inset-0 rounded-2xl bg-black/80">
-              <div id="searchResults" class="search-results tracks text-[.7rem] text-white w-full h-full overflow-auto overflow-x-hidden  flex flex-col divide-y-2 divide-gray-400/6">
-                <div id="0" class="result1 containing hover:bg-slate-400/30 w-full h-14  flex flex-row justify-around">
-                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
-                    <div class="track-name ">Love of my life by jayzee</div>
-                    <div class="track-name">ft. Yong jonn</div>
-                  </div>
-                  <div class="duration self-center"> <i id="icon0" class="fa-solid fa-play icon"></i></div>
-                </div>
+              <div id="searchSpinner" class="search-spinner w-full h-full text-[.7rem] p-10 flex justify-center text-white items-center">
+                <span id="errorMessage" class="error-message"></span>
+                <div id="searchSpinnerContent" class=" w-6 h-6 m-auto rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
+              </div>
+              <div id="searchResults" class="search-results  tracks text-[.7rem] text-white w-full h-full overflow-auto overflow-x-hidden  flex flex-col divide-y-2 divide-gray-400/6">
                 <div id="1" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
                   <div class="track-id flex flex-col justify-end truncate w-[10rem]">
                     <div class="track-name">Love of my life by jayzee</div>
@@ -51,27 +48,6 @@
                     <div class="track-name">ft. Yong jonn</div>
                   </div>
                   <div class="duration self-center">  <i id="icon3" class="fa-solid fa-play icon "></i></div>
-                </div>
-                <div id="4" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
-                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
-                    <div class="track-name">Love of my life by jayzee</div>
-                    <div class="track-name">ft. Yong jonn</div>
-                  </div>
-                  <div class="duration self-center">  <i id="icon4" class="fa-solid fa-play icon"></i></div>
-                </div>
-                <div id="5" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
-                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
-                    <div class="track-name">Love of my life by jayzee</div>
-                    <div class="track-name">ft. Yong jonn</div>
-                  </div>
-                  <div class="duration self-center">  <i id="icon5" class="fa-solid fa-play icon"></i></div>
-                </div>
-                <div id="6" class="result2 containing hover:bg-slate-400/30 w-full h-14 flex flex-row justify-around">
-                  <div class="track-id flex flex-col justify-end truncate w-[10rem]">
-                    <div class="track-name">Love of my life by jayzee</div>
-                    <div class="track-name">ft. Yong jonn</div>
-                  </div>
-                  <div class="duration self-center">  <i div="icon6" class="fa-solid fa-play icon"></i></div>
                 </div>
               </div>
               <div id="hideSearchResults" class="bg-rose-600/80 hover:shadow-rose-300 hover:shadow-sm hover:scale-8 w-8 h-8 absolute -top-3 right-0 rounded-full"><img class="scale-5" src="./images/icons/Close.png"></div>
@@ -100,7 +76,7 @@
              <audio id="audio">
               <source src="./musics/01 - Whatcha Say - (Musicfire.in) - Copy - Copy.mp3" type="audio/mp4">
              </audio>
-             <input id="rangeTrk" type="range" class="range ml-8 w-8/12 justify-self-center self-center" min="0" max="150" value="20">
+             <input id="rangeTrk" type="range" class="range ml-8 w-8/12 justify-self-center self-center" min="0" max="150" value="0">
             <div class="duration sm:text-16 sm:flex text-[0.65rem] flex w-12 ml-2 lg:text-sm justify-center md:text-1.2 self-center sm:w-16 sm:text-center">
               <span id="timeSpan" class="current-time text-slate-200">0:00/</span>
               <span id="songDuration" class="time-span text-slate-200">3:52</span>
@@ -109,10 +85,8 @@
           </div>
           <div class="utility-components sm:scale-125 md:scale-8 xl:mt-3 w-full h-6 mt-10 sm:mt-6 flex md:px-12 justify-around  sm:px-7 transition-all"> <!-- px-28 -->
             <img id="shazam" src="./images/icons/shazam.png" class="hover:scale-150 hover:animate-pulse scale-125 sm:scale-8 md:scale-125 " alt="shazam-icon"> <!-- -translate-x-3 -->
-            <!-- <img src="./images/icons/Repeat.png" alt="repeat-icon" class="sm:scale-5 hover:scale-125 md:scale-95"> -->
             <i id="repeat" class="fa-solid fa-repeat scale-105 hover:scale-125 flex items-center"></i>
             <div class="vol flex justify-center items-center w-8 h-full ">
-            <!-- <img src="./images/icons/Mask group-1.png " class="h-6 vol-icon sm:scale-0.6 md:scale-95" alt="vol-icon"> -->
             <i id="volLow" class="fa-solid fa-volume-low flex justify-center items-center mr-1 w-6 h-6 vol-icon text-purple-500 scale-125 "></i><!-- sm:scale-0.6  -->
             <input id="vol" type="range" class="vol-cntrl h-2 w-3/4 ">
             </div>
@@ -121,9 +95,8 @@
           </div>
           <div id="playCntrls" class="playback-btn w-3/4 h-12 m-auto mt-10 md:w-2/4 md:mb-5   mb-2 sm:mb-2 xl:mt-10 xl:mb-4 justify-around p-2 flex  sm:gap-4 sm:px-0 sm:justify-between"> <!-- mt-9 pr-5-->
             <img id="prevSong" src="./images/icons/Previous.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="previous-btn">
-            <!-- <img src="./images/icons/Mask group-2.png" class="w-10 hover:scale-8 pause h-10 rounded-full sm:scale-8 bg-purple-500 -mt-1 lg:scale-90" alt="pause-btn"> -->
-             <div class="flex justify-center items-center h-10 rounded-full bg-purple-500 hover:scale-8 w-10 ">
-             <i id="play" class="fa-solid fa-play scale-150"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause--> <!-- class=" fa-solid fa-play scale-150 play1" -->
+             <div class="transition-all flex justify-center items-center h-10 rounded-full bg-purple-500 hover:scale-8 w-10 ">
+             <i id="play" class="fa-solid fa-play scale-150"></i> <!-- sm:scale-8 lg:scale-90 -mt-1 pause--> 
              <div id="audioSpinner" class="audio-spinner w-5 h-5 m-auto rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div> 
              </div>
             <img id="nextSong" src="./images/icons/Next.png" class="hover:scale-8 sm:scale-0.65 lg:scale-90" alt="next-btn">
@@ -164,13 +137,13 @@
               </div>
               <div class="track-art h-full"><img id="audioArt" alt="Asap rocky album"><div id="uiOverlay" class="absolute z-0 bottom-0 bg-red-400/20 w-full h-full"></div></div><!-- saturate-[.8] brightness-[.65] contrast-[1.2] -->
               <div class="w-full h-12 absolute top-1 flex text-[.65rem] justify-around ">
-               <!-- bg-gradient-to-r from-yellow-600 to-red-500 --> <div id="songBtn" class="song-btn w-[4rem] h-[2rem] sm:max-lg:ml-3 mix-blend-hard-light border-[.1px] hover:shadow-md cursor-default hover:shadow-gray-300 border-emerald-400  mt-5 ml-5 xl:-ml-10 rounded-2xl flex justify-center items-center"> <div class="text-white">Songs</div></div>
-               <!-- bg-yellow-600 --> <div id="relatedBtn" class="Related-btn w-[4rem] h-[2rem] mix-blend-hard-light border-[.1px] border-emerald-400 sm:max-lg:mr-[4rem] hover:shadow-md cursor-default hover:shadow-gray-300   mt-5 mr-12 xl:mr-[9rem] rounded-2xl flex justify-center items-center"> <div class="text-white ">Related</div></div>
+               <!-- bg-gradient-to-r from-yellow-600 to-red-500 --> <div id="songBtn" class="song-btn w-[4rem] h-[2rem] sm:max-lg:ml-3  border-[.1px] hover:shadow-md cursor-default hover:shadow-gray-300 border-emerald-400  mt-5 ml-5 xl:-ml-10 rounded-2xl flex justify-center items-center"> <div class="text-white">Songs</div></div>
+               <!-- bg-yellow-600 --> <div id="relatedBtn" class="Related-btn w-[4rem] h-[2rem] border-[.1px] border-emerald-400 sm:max-lg:mr-[4rem] hover:shadow-md cursor-default hover:shadow-gray-300   mt-5 mr-12 xl:mr-[9rem] rounded-2xl flex justify-center items-center"> <div class="text-white ">Related</div></div>
                 <div id="hideShazamResult" class="bg-rose-600/80 h-5 w-5 hover:shadow-rose-300 hover:shadow-sm hover:scale-8  laptop:w-8 laptop:h-8 sm:max-lg:w-5 sm:max-lg:h-5 absolute top-2 right-8 rounded-full"><img class="scale-8" src="./images/icons/Close.png"></div>
           </div>
 
 
-          <div id="resultsInfo" class="results-info absolute bottom-16 left-5 text-white cursor-default"> <!-- use this in ur js code bottom = 1.25rem bottom-5 -->
+          <div id="resultsInfo" class="results-info absolute bottom-16 left-5 text-white cursor-default"> 
            <div id="trackName" class="track-name  text-[1.02rem] truncate  min-[361px]:max-[640px]:max-w-[42vw] max-w-[70vw] md:max-w-[22vw] lg:max-w-[45vw] sm:max-lg:text-[.68rem] laptop:text-[1.02rem] font-bold">Fucking Problems (feat. Ty Dollar$)</div><!-- text-[.7rem] -->
             <div id="artist" class="artists mt-4 text-[.57rem] font-bold sm:max-lg:text-[.6rem] max-w-[68vw] laptop:text-[.75rem]  md:max-w-[22vw] lg:max-w-[45vw] min-[361px]:max-[640px]:max-w-[38vw]">Asap Rocky</div>
             <div class="more -mt-1 hover:scale-y-[1.5]">
@@ -197,7 +170,6 @@
 
             <div class="song1 w-full h-14 flex pl-2 hover:bg-gray-400/30">
               <div class="track-pic1 w-16 h-[3.3rem] rounded-sm self-end flex justify-center items-center text-white">
-                <!-- <i id="relPlay" class="fa-solid fa-play scale-100 hover:scale-8"></i> -->
                 <div id="relSpinner" class="w-5 h-5 rounded-full border-[2px] border-teal-200 border-t-black animate-spin"></div>
                 </div>
               <div class="truncate track-info ml-5 w-[10.2rem] xl:w-[12rem] xl:ml-12 text-[.68rem] text-white font-medium sm:max-lg:ml-5 sm:max-lg:font-[400]  sm:max-[800px]:w-[8rem] min[801px]:max-lg:w-[10rem]">
@@ -340,9 +312,6 @@
     </div>
   </div>
   </div>
-      
-
-   
    <script type="module" src="script.js"></script> 
 </body>
 </html>
