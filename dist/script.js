@@ -1097,12 +1097,14 @@ function getSearchResult() {
   if(query){
     search.value = ""
     search.setAttribute("placeHolder", "search your desired track, album, playlist")
+    searchResults.style.display = "none"
     errorMessage.style.display = "none"
     searchSpinnerContent.style.display = "block"
     mainSearchContainer.style.display = "block"
     shazamSearch(query)
   }
   else{
+    searchResults.style.display = "none"
     searchSpinnerContent.style.display = "none"
     mainSearchContainer.style.display = "block"
     errorMessage.style.display = "block"
@@ -1140,11 +1142,13 @@ async function shazamSearch(info) {
     let resultUiUpdater = result.tracks.hits
     searchUpdate(resultUiUpdater)
     searchSpinner.style.display = "none"
+    errorMessage.style.display = "none"
     searchResults.style.display = "block"
     console.log(result)
   }
   catch(error) {
     console.error("boss Shazam search Yawa ooh: " + error)
+    searchResults.style.display = "none"
     searchSpinnerContent.style.display = "none"
     searchSpinner.style.display = "block"
     errorMessage.style.display = "block"
